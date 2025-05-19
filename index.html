@@ -1,219 +1,238 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ayubo Care - Services</title>
-  <link rel="stylesheet" href="styles.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Ayubo Care – Services</title>
+
+  <!-- Inter font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <!-- Tailwind CSS via CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
+  <!-- Helper to assign Inter to .font-inter -->
+  <style>
+    .font-inter { font-family: 'Inter', sans-serif; }
+  </style>
+
+  <!-- Tab script -->
+  <script src="tabs.js" defer></script>
 </head>
-<body>
-  <header class="app-header">
-    <div class="logo">
-      <h1>Ayubo Care</h1>
-      <span class="tagline">Trusted care for your loved ones in Sri Lanka</span>
+
+<body class="font-inter bg-gray-50 text-gray-800">
+  <!-- HEADER -->
+  <header class="flex justify-between items-center p-4 bg-white shadow">
+    <div>
+      <h1 class="text-2xl font-semibold text-teal-600">Ayubo Care</h1>
+      <span class="block text-sm text-gray-600">Trusted care for your loved ones in Sri Lanka</span>
     </div>
-    <button class="hamburger" aria-label="Open menu">☰</button>
+    <button aria-label="Open menu" class="text-2xl leading-none">☰</button>
   </header>
 
-  <nav class="category-tabs">
-    <button class="tab active">Medical Visits</button>
-    <button class="tab">Home Visits</button>
-    <button class="tab">Overnight Care</button>
-    <button class="tab">Companionship</button>
-    <button class="tab">Task Help</button>
+  <!-- TABS -->
+  <nav class="flex overflow-x-auto bg-gray-100 border-b px-4 py-2">
+    <button
+      class="tab-btn border border-teal-500 bg-teal-100 text-teal-600 rounded-full px-4 py-2 mr-3 text-sm whitespace-nowrap"
+      data-target="medical"
+    >Medical Visit Support</button>
+
+    <button
+      class="tab-btn border border-gray-300 bg-white text-gray-700 rounded-full px-4 py-2 mr-3 text-sm whitespace-nowrap"
+      data-target="home"
+    >Home-Based Check-ins</button>
+
+    <button
+      class="tab-btn border border-gray-300 bg-white text-gray-700 rounded-full px-4 py-2 mr-3 text-sm whitespace-nowrap"
+      data-target="companionship"
+    >Companionship &amp; Emotional Support</button>
+
+    <button
+      class="tab-btn border border-gray-300 bg-white text-gray-700 rounded-full px-4 py-2 mr-3 text-sm whitespace-nowrap"
+      data-target="overnight"
+    >Overnight &amp; Emergency Support</button>
+
+    <button
+      class="tab-btn border border-gray-300 bg-white text-gray-700 rounded-full px-4 py-2 text-sm whitespace-nowrap"
+      data-target="task"
+    >Task-Based Support</button>
   </nav>
 
-  <main class="services-container">
-    <article class="service-card">
-      <div class="icon placeholder"></div>
-      <div class="info">
-        <h2>Clinic Escort Visit</h2>
-        <p>A care assistant escorts your parent to their appointment and sends you an update.</p>
-        <div class="meta">
-          <span>Up to 2 hrs</span> &bull; <span>LKR 3,500</span>
+  <!-- PANELS -->
+  <main class="p-4">
+    <!-- 1. Medical Visit Support -->
+    <section id="medical" class="tab-panel space-y-4">
+      <article class="flex items-center bg-white rounded-lg shadow p-4">
+        <div class="w-12 h-12 bg-gray-200 rounded-full mr-4"></div>
+        <div class="flex-1">
+          <h2 class="text-lg font-semibold">Clinic/Hospital Escort</h2>
+          <p class="text-sm text-gray-600">Assistant accompanies elder to medical appointments, helps with check-in, translation, and returns them home.</p>
+          <div class="text-xs text-gray-500 mt-1"><span>Up to 2 hrs</span> • <span>LKR 3,500</span></div>
         </div>
-      </div>
-      <button class="btn-primary">Book Now</button>
-    </article>
+        <button class="bg-teal-600 hover:bg-[#8B5E3C] text-white px-4 py-2 rounded-lg text-sm">Book Now</button>
+      </article>
+      <article class="flex items-center bg-white rounded-lg shadow p-4">
+        <div class="w-12 h-12 bg-gray-200 rounded-full mr-4"></div>
+        <div class="flex-1">
+          <h2 class="text-lg font-semibold">Prescription Pickup &amp; Delivery</h2>
+          <p class="text-sm text-gray-600">Collect prescribed medications and deliver to elder’s home.</p>
+          <div class="text-xs text-gray-500 mt-1"><span>Up to 1 hr</span> • <span>LKR 2,500</span></div>
+        </div>
+        <button class="bg-teal-600 hover:bg-[#8B5E3C] text-white px-4 py-2 rounded-lg text-sm">Book Now</button>
+      </article>
+      <article class="flex items-center bg-white rounded-lg shadow p-4">
+        <div class="w-12 h-12 bg-gray-200 rounded-full mr-4"></div>
+        <div class="flex-1">
+          <h2 class="text-lg font-semibold">Lab Test Assistance</h2>
+          <p class="text-sm text-gray-600">Escort elder to lab or coordinate home sample collection.</p>
+          <div class="text-xs text-gray-500 mt-1"><span>Up to 2 hrs</span> • <span>LKR 3,000</span></div>
+        </div>
+        <button class="bg-teal-600 hover:bg-[#8B5E3C] text-white px-4 py-2 rounded-lg text-sm">Book Now</button>
+      </article>
+      <article class="flex items-center bg-white rounded-lg shadow p-4">
+        <div class="w-12 h-12 bg-gray-200 rounded-full mr-4"></div>
+        <div class="flex-1">
+          <h2 class="text-lg font-semibold">Medical Records Help</h2>
+          <p class="text-sm text-gray-600">Help review, organize, or send reports to family abroad.</p>
+          <div class="text-xs text-gray-500 mt-1"><span>Varies</span> • <span>Contact us</span></div>
+        </div>
+        <button class="bg-teal-600 hover:bg-[#8B5E3C] text-white px-4 py-2 rounded-lg text-sm">Book Now</button>
+      </article>
+    </section>
 
-    <article class="service-card">
-      <div class="icon placeholder"></div>
-      <div class="info">
-        <h2>Prescription Pickup &amp; Delivery</h2>
-        <p>A care assistant collects prescribed medications and delivers them to your parent’s home.</p>
-        <div class="meta">
-          <span>Up to 1 hr</span> &bull; <span>LKR 2,500</span>
+    <!-- 2. Home-Based Check-ins -->
+    <section id="home" class="tab-panel hidden space-y-4">
+      <article class="flex items-center bg-white rounded-lg shadow p-4">
+        <div class="w-12 h-12 bg-gray-200 rounded-full mr-4"></div>
+        <div class="flex-1">
+          <h2 class="text-lg font-semibold">Wellness Check-In (Short Visit)</h2>
+          <p class="text-sm text-gray-600">30–60 min visit to check on elder's state; provide updates.</p>
+          <div class="text-xs text-gray-500 mt-1"><span>30–60 min</span> • <span>Contact us</span></div>
         </div>
-      </div>
-      <button class="btn-primary">Book Now</button>
-    </article>
+        <button class="bg-teal-600 hover:bg-[#8B5E3C] text-white px-4 py-2 rounded-lg text-sm">Book Now</button>
+      </article>
+      <article class="flex items-center bg-white rounded-lg shadow p-4">
+        <div class="w-12 h-12 bg-gray-200 rounded-full mr-4"></div>
+        <div class="flex-1">
+          <h2 class="text-lg font-semibold">Extended Home Visit</h2>
+          <p class="text-sm text-gray-600">Up to 3 hrs for companionship, light help (meals, reminders).</p>
+          <div class="text-xs text-gray-500 mt-1"><span>Up to 3 hrs</span> • <span>Contact us</span></div>
+        </div>
+        <button class="bg-teal-600 hover:bg-[#8B5E3C] text-white px-4 py-2 rounded-lg text-sm">Book Now</button>
+      </article>
+      <article class="flex items-center bg-white rounded-lg shadow p-4">
+        <div class="w-12 h-12 bg-gray-200 rounded-full mr-4"></div>
+        <div class="flex-1">
+          <h2 class="text-lg font-semibold">Daily Medication Reminder Visit</h2>
+          <p class="text-sm text-gray-600">Ensure medications are taken correctly; review supplies.</p>
+          <div class="text-xs text-gray-500 mt-1"><span>Up to 1 hr</span> • <span>Contact us</span></div>
+        </div>
+        <button class="bg-teal-600 hover:bg-[#8B5E3C] text-white px-4 py-2 rounded-lg text-sm">Book Now</button>
+      </article>
+    </section>
 
-    <article class="service-card">
-      <div class="icon placeholder"></div>
-      <div class="info">
-        <h2>Lab Test Assistance</h2>
-        <p>An assistant escorts your parent to the lab or coordinates home sample collection.</p>
-        <div class="meta">
-          <span>Up to 2 hrs</span> &bull; <span>LKR 3,000</span>
+    <!-- 3. Companionship & Emotional Support -->
+    <section id="companionship" class="tab-panel hidden space-y-4">
+      <article class="flex items-center bg-white rounded-lg shadow p-4">
+        <div class="w-12 h-12 bg-gray-200 rounded-full mr-4"></div>
+        <div class="flex-1">
+          <h2 class="text-lg font-semibold">Companionship Visit</h2>
+          <p class="text-sm text-gray-600">Spend time talking, reading, playing games, or just being present.</p>
+          <div class="text-xs text-gray-500 mt-1"><span>Varies</span> • <span>Contact us</span></div>
         </div>
-      </div>
-      <button class="btn-primary">Book Now</button>
-    </article>
+        <button class="bg-teal-600 hover:bg-[#8B5E3C] text-white px-4 py-2 rounded-lg text-sm">Book Now</button>
+      </article>
+      <article class="flex items-center bg-white rounded-lg shadow p-4">
+        <div class="w-12 h-12 bg-gray-200 rounded-full mr-4"></div>
+        <div class="flex-1">
+          <h2 class="text-lg font-semibold">Virtual Call Assistance</h2>
+          <p class="text-sm text-gray-600">Set up and support family video calls.</p>
+          <div class="text-xs text-gray-500 mt-1"><span>Varies</span> • <span>Contact us</span></div>
+        </div>
+        <button class="bg-teal-600 hover:bg-[#8B5E3C] text-white px-4 py-2 rounded-lg text-sm">Book Now</button>
+      </article>
+      <article class="flex items-center bg-white rounded-lg shadow p-4">
+        <div class="w-12 h-12 bg-gray-200 rounded-full mr-4"></div>
+        <div class="flex-1">
+          <h2 class="text-lg font-semibold">Celebration Visits</h2>
+          <p class="text-sm text-gray-600">Special visits on birthdays/festivals with a small treat.</p>
+          <div class="text-xs text-gray-500 mt-1"><span>Varies</span> • <span>Contact us</span></div>
+        </div>
+        <button class="bg-teal-600 hover:bg-[#8B5E3C] text-white px-4 py-2 rounded-lg text-sm">Book Now</button>
+      </article>
+    </section>
+
+    <!-- 4. Overnight & Emergency Support -->
+    <section id="overnight" class="tab-panel hidden space-y-4">
+      <article class="flex items-center bg-white rounded-lg shadow p-4">
+        <div class="w-12 h-12 bg-gray-200 rounded-full mr-4"></div>
+        <div class="flex-1">
+          <h2 class="text-lg font-semibold">Overnight Stay (10–12 hrs)</h2>
+          <p class="text-sm text-gray-600">Assistant stays overnight to ensure safety and comfort.</p>
+          <div class="text-xs text-gray-500 mt-1"><span>10–12 hrs</span> • <span>Contact us</span></div>
+        </div>
+        <button class="bg-teal-600 hover:bg-[#8B5E3C] text-white px-4 py-2 rounded-lg text-sm">Book Now</button>
+      </article>
+      <article class="flex items-center bg-white rounded-lg shadow p-4">
+        <div class="w-12 h-12 bg-gray-200 rounded-full mr-4"></div>
+        <div class="flex-1">
+          <h2 class="text-lg font-semibold">Hospital Stay Support (Day/Night)</h2>
+          <p class="text-sm text-gray-600">Companionship, communication, and logistics at the hospital.</p>
+          <div class="text-xs text-gray-500 mt-1"><span>Varies</span> • <span>Contact us</span></div>
+        </div>
+        <button class="bg-teal-600 hover:bg-[#8B5E3C] text-white px-4 py-2 rounded-lg text-sm">Book Now</button>
+      </article>
+      <article class="flex items-center bg-white rounded-lg shadow p-4">
+        <div class="w-12 h-12 bg-gray-200 rounded-full mr-4"></div>
+        <div class="flex-1">
+          <h2 class="text-lg font-semibold">Emergency Escort Visit</h2>
+          <p class="text-sm text-gray-600">On-call urgent visits with basic transport coordination.</p>
+          <div class="text-xs text-gray-500 mt-1"><span>As needed</span> • <span>Contact us</span></div>
+        </div>
+        <button class="bg-teal-600 hover:bg-[#8B5E3C] text-white px-4 py-2 rounded-lg text-sm">Book Now</button>
+      </article>
+    </section>
+
+    <!-- 5. Task-Based Support -->
+    <section id="task" class="tab-panel hidden space-y-4">
+      <article class="flex items-center bg-white rounded-lg shadow p-4">
+        <div class="w-12 h-12 bg-gray-200 rounded-full mr-4"></div>
+        <div class="flex-1">
+          <h2 class="text-lg font-semibold">Bill Payment Help</h2>
+          <p class="text-sm text-gray-600">Accompany elder to pay utility bills or assist online.</p>
+          <div class="text-xs text-gray-500 mt-1"><span>Varies</span> • <span>Contact us</span></div>
+        </div>
+        <button class="bg-teal-600 hover:bg-[#8B5E3C] text-white px-4 py-2 rounded-lg text-sm">Book Now</button>
+      </article>
+      <article class="flex items-center bg-white rounded-lg shadow p-4">
+        <div class="w-12 h-12 bg-gray-200 rounded-full mr-4"></div>
+        <div class="flex-1">
+          <h2 class="text-lg font-semibold">Grocery or Essentials Pickup</h2>
+          <p class="text-sm text-gray-600">Run local errands for food, toiletries, etc.</p>
+          <div class="text-xs text-gray-500 mt-1"><span>Varies</span> • <span>Contact us</span></div>
+        </div>
+        <button class="bg-teal-600 hover:bg-[#8B5E3C] text-white px-4 py-2 rounded-lg text-sm">Book Now</button>
+      </article>
+      <article class="flex items-center bg-white rounded-lg shadow p-4">
+        <div class="w-12 h-12 bg-gray-200 rounded-full mr-4"></div>
+        <div class="flex-1">
+          <h2 class="text-lg font-semibold">Home Safety Check</h2>
+          <p class="text-sm text-gray-600">Assess risks (slippery floors, loose wires), report issues.</p>
+          <div class="text-xs text-gray-500 mt-1"><span>Varies</span> • <span>Contact us</span></div>
+        </div>
+        <button class="bg-teal-600 hover:bg-[#8B5E3C] text-white px-4 py-2 rounded-lg text-sm">Book Now</button>
+      </article>
+    </section>
   </main>
 
-  <footer class="help-bar">
-    <button class="btn-help">Chat via WhatsApp</button>
-    <select class="currency-selector" aria-label="Select currency">
-      <option>LKR</option>
-      <option>USD</option>
-      <option>GBP</option>
+  <!-- FOOTER -->
+  <footer class="fixed bottom-0 left-0 right-0 bg-white border-t flex justify-around items-center p-3">
+    <button class="bg-[#F4C430] hover:bg-amber-600 text-white px-4 py-2 rounded-lg text-sm">Chat via WhatsApp</button>
+    <select class="text-xs px-2 py-1 border rounded" aria-label="Select currency">
+      <option>LKR</option><option>USD</option><option>GBP</option>
     </select>
-    <select class="lang-selector" aria-label="Select language">
-      <option>EN</option>
-      <option>සිං</option>
-      <option>தமிழ்</option>
+    <select class="text-xs px-2 py-1 border rounded" aria-label="Select language">
+      <option>EN</option><option>සිං</option><option>தமிழ்</option>
     </select>
   </footer>
 </body>
 </html>
-
-/* styles.css */
-:root {
-  --bg: #fdfdfd;
-  --text: #333;
-  --accent: #007b7f;
-  --accent-light: #e0f7f8;
-  --saffron: #F4C430;
-  --brown: #8B5E3C;
-  --font: 'Inter', sans-serif;
-}
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-body {
-  font-family: var(--font);
-  background: var(--bg);
-  color: var(--text);
-}
-.app-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem;
-  background: #fff;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-}
-.logo h1 {
-  font-size: 1.5rem;
-  color: var(--accent);
-}
-.tagline {
-  display: block;
-  font-size: 0.875rem;
-  color: #666;
-}
-.hamburger {
-  font-size: 1.5rem;
-  background: none;
-  border: none;
-  color: var(--text);
-}
-.category-tabs {
-  display: flex;
-  overflow-x: auto;
-  padding: 0.75rem;
-  background: #fafafa;
-  border-bottom: 1px solid #eee;
-}
-.tab {
-  flex: 0 0 auto;
-  margin-right: 0.75rem;
-  padding: 0.5rem 1rem;
-  background: #fff;
-  border: 1px solid #ddd;
-  border-radius: 20px;
-  font-size: 0.875rem;
-  color: var(--text);
-}
-.tab.active {
-  border-color: var(--accent);
-  background: var(--accent-light);
-  color: var(--accent);
-}
-.services-container {
-  padding: 1rem;
-}
-.service-card {
-  display: flex;
-  align-items: center;
-  background: #fff;
-  border-radius: 12px;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-  margin-bottom: 1rem;
-  padding: 1rem;
-}
-.service-card .icon.placeholder {
-  width: 48px;
-  height: 48px;
-  background: #eee;
-  border-radius: 50%;
-  margin-right: 1rem;
-}
-.service-card .info {
-  flex: 1;
-}
-.service-card h2 {
-  font-size: 1rem;
-  margin-bottom: 0.25rem;
-}
-.service-card p {
-  font-size: 0.875rem;
-  color: #555;
-  margin-bottom: 0.5rem;
-}
-.meta {
-  font-size: 0.75rem;
-  color: #888;
-}
-.btn-primary {
-  background: var(--accent);
-  color: #fff;
-  border: none;
-  padding: 0.5rem 1rem;
-  border-radius: 8px;
-  font-size: 0.875rem;
-  cursor: pointer;
-}
-.btn-primary:hover {
-  background: var(--brown);
-}
-.help-bar {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: #fff;
-  border-top: 1px solid #eee;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  padding: 0.75rem;
-}
-.btn-help {
-  background: var(--saffron);
-  color: #fff;
-  border: none;
-  padding: 0.5rem 1rem;
-  border-radius: 8px;
-  font-size: 0.875rem;
-  cursor: pointer;
-}
-.currency-selector,
-.lang-selector {
-  font-size: 0.75rem;
-  padding: 0.25rem;
-}
